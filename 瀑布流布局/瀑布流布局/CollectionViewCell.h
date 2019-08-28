@@ -1,5 +1,5 @@
 //
-//  LCollectionHeadView.h
+//  CollectionViewCell.h
 //  瀑布流布局
 //
 //  Created by LiLei on 28/8/2019.
@@ -10,9 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LCollectionHeadView : UICollectionReusableView
-
-
+@interface CollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 

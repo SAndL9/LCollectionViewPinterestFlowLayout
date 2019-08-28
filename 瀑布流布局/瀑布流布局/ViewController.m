@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "LCollectionViewPinterestFlowLayout.h"
-#import "LCollectionHeadView.h"
+#import "LCollectionReusableView.h"
+#import "CollectionViewCell.h"
+
 
 #define kScrrenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -36,11 +38,10 @@
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
 
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"CollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"Cell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"LCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"sectionFooter"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"LCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeader"];
 
-    [_collectionView registerClass:[LCollectionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeader"];
-    [_collectionView registerClass:[LCollectionHeadView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"sectionFooter"];
-    
 
     [self.view addSubview:_collectionView];
     
@@ -60,7 +61,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
     CGFloat red = (CGFloat)(arc4random() % 255)/255.0;
     CGFloat green = (CGFloat)(arc4random() % 255)/255.0;
@@ -68,7 +69,7 @@
     
     UIColor *color = [[UIColor alloc] initWithRed:red green:green blue:blue alpha:0.5];
     cell.backgroundColor = color;
-    
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld区%ld行",(long)indexPath.section,(long)indexPath.row];
     return cell;
 }
 
@@ -76,12 +77,12 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        LCollectionHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeader" forIndexPath:indexPath];
-        
+        LCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"sectionHeader" forIndexPath:indexPath];
+        headerView.titleLabel.text = [NSString stringWithFormat:@"Headerheader--%ld",(long)indexPath.section];
         return headerView;
     }else{
-        LCollectionHeadView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"sectionFooter" forIndexPath:indexPath];
-        
+        LCollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"sectionFooter" forIndexPath:indexPath];
+        footerView.titleLabel.text = [NSString stringWithFormat:@"Footer--%ld",(long)indexPath.section];
         return footerView;
     }
 }

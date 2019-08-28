@@ -14,7 +14,10 @@
 		846C02362316590A0047A98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846C02342316590A0047A98C /* LaunchScreen.storyboard */; };
 		846C02392316590A0047A98C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C02382316590A0047A98C /* main.m */; };
 		846C0241231659450047A98C /* LCollectionViewPinterestFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C0240231659450047A98C /* LCollectionViewPinterestFlowLayout.m */; };
-		846C024423165C120047A98C /* LCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C024323165C120047A98C /* LCollectionHeadView.m */; };
+		846C0256231680440047A98C /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C0254231680440047A98C /* CollectionViewCell.m */; };
+		846C0257231680440047A98C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846C0255231680440047A98C /* CollectionViewCell.xib */; };
+		846C025B231680AB0047A98C /* LCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C0259231680AB0047A98C /* LCollectionReusableView.m */; };
+		846C025C231680AB0047A98C /* LCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846C025A231680AB0047A98C /* LCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +33,12 @@
 		846C02382316590A0047A98C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		846C023F231659450047A98C /* LCollectionViewPinterestFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCollectionViewPinterestFlowLayout.h; sourceTree = "<group>"; };
 		846C0240231659450047A98C /* LCollectionViewPinterestFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCollectionViewPinterestFlowLayout.m; sourceTree = "<group>"; };
-		846C024223165C120047A98C /* LCollectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCollectionHeadView.h; sourceTree = "<group>"; };
-		846C024323165C120047A98C /* LCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCollectionHeadView.m; sourceTree = "<group>"; };
+		846C0253231680440047A98C /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		846C0254231680440047A98C /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		846C0255231680440047A98C /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		846C0258231680AB0047A98C /* LCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCollectionReusableView.h; sourceTree = "<group>"; };
+		846C0259231680AB0047A98C /* LCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCollectionReusableView.m; sourceTree = "<group>"; };
+		846C025A231680AB0047A98C /* LCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCollectionReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +77,12 @@
 				846C022D231659090047A98C /* ViewController.m */,
 				846C023F231659450047A98C /* LCollectionViewPinterestFlowLayout.h */,
 				846C0240231659450047A98C /* LCollectionViewPinterestFlowLayout.m */,
-				846C024223165C120047A98C /* LCollectionHeadView.h */,
-				846C024323165C120047A98C /* LCollectionHeadView.m */,
+				846C0258231680AB0047A98C /* LCollectionReusableView.h */,
+				846C0259231680AB0047A98C /* LCollectionReusableView.m */,
+				846C025A231680AB0047A98C /* LCollectionReusableView.xib */,
+				846C0253231680440047A98C /* CollectionViewCell.h */,
+				846C0254231680440047A98C /* CollectionViewCell.m */,
+				846C0255231680440047A98C /* CollectionViewCell.xib */,
 				846C022F231659090047A98C /* Main.storyboard */,
 				846C02322316590A0047A98C /* Assets.xcassets */,
 				846C02342316590A0047A98C /* LaunchScreen.storyboard */,
@@ -140,6 +151,8 @@
 			files = (
 				846C02362316590A0047A98C /* LaunchScreen.storyboard in Resources */,
 				846C02332316590A0047A98C /* Assets.xcassets in Resources */,
+				846C0257231680440047A98C /* CollectionViewCell.xib in Resources */,
+				846C025C231680AB0047A98C /* LCollectionReusableView.xib in Resources */,
 				846C0231231659090047A98C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,10 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846C0256231680440047A98C /* CollectionViewCell.m in Sources */,
 				846C022E231659090047A98C /* ViewController.m in Sources */,
 				846C02392316590A0047A98C /* main.m in Sources */,
 				846C0241231659450047A98C /* LCollectionViewPinterestFlowLayout.m in Sources */,
-				846C024423165C120047A98C /* LCollectionHeadView.m in Sources */,
+				846C025B231680AB0047A98C /* LCollectionReusableView.m in Sources */,
 				846C022B231659090047A98C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
