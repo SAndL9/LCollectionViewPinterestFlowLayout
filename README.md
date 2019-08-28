@@ -2,5 +2,5 @@
 简易瀑布流
 
 效果图:
-![](/LCollectionViewPinterestFlowLayout.gif)
+![](/LLPinterestFlowLayout.gif)
 
